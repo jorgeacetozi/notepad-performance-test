@@ -18,7 +18,6 @@ class HomeSimulation extends Simulation {
       .get("/"))
 
   setUp(scn.inject(atOnceUsers(100)).protocols(httpConf)).assertions(
-    global.failedRequests.percent.is(0),
-    global.responseTime.max.lt(3000)
+    global.failedRequests.percent.is(0)
   )
 }
